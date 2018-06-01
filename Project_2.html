@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Project_2</title>
+    <link rel="stylesheet" href="bootstrapsource.css">
+    <link rel = "stylesheet" href = "font-awesome-4.7.0/css/font-awesome.css">
+    <script src="jquery-3.3.1.slim.js"></script>
+    <script src="popper.js"></script>
+    <script src="bootstrap.js"></script>
+    <script src="navbar-fixed.js"></script>
+    <style>
+        body 
+        {
+            margin-top:80px; /* To push the body down the navbar */
+        }
+        .navbar 
+        {
+            box-shadow:2px 2px 5px #3292a6;/* Adds a shadow effect to the element, color is dark moderate cyan */ 
+            opacity:0.9;
+            background: #fff;
+        }
+        .nav-item 
+        {
+            font-size: 1.4rem;/* Relative to the font size of root element */
+            padding-right: 20px;
+        }
+        #showcase 
+        {
+            position:relative;/* Tells type of position property for an element */
+            background: url("Images/mountains.jpg");
+            min-height: 550px;
+        }
+        .overlay /* Covering the background with some coating */
+        {
+            background-color: #3292a6;
+            opacity:0.8;
+            position:absolute;
+            top:0;
+            left:0;
+            width:100%;
+            height:100%;
+        }
+        #button 
+        {
+            background-color:#3292a6;
+        }
+        .info-header 
+        {
+            width:75%;
+            margin:auto;/* aligns it to the center */
+            border-bottom: 1px;
+        }
+        .author-img 
+        {
+            margin-top: -50px;
+        }
+        .author-card:hover 
+        {
+            background-color: #3292a6;
+            color:#fff;
+
+        }
+        .author-card:hover .icon 
+        {
+            color:#fff;
+        }
+    </style>
+</head>
+<!--
+  WHILE GOING FROM NAVIGATION TO CERTAIN PARTS OF THE PAGE, FOR SMOOTH SCROLLING jQUERY PLUGIN IS USED
+   jquery plugin is used for smooth scrolling, it basically looks at the id and when an href is pointed
+   it looks for id and then smoothly scrolls down to it. 
+
+  NAVBAR
+   d-inline = this class sets the display property as inline 
+   align-middle = this class is used to change the vertical alignment of an element, to middle here
+  
+  SHOWCASE SECTION
+   mt = class for margin top
+   pt = class for padding top   
+   text-white = this class gives colors to text
+   img-fluid = creates responsive images
+
+  CONTACTS
+   input-group = extend form controls by adding text, buttons etc., place an add-on or button on either 
+   side of input
+-->
+<body>
+    <nav class = "navbar navbar-expand-md navbar-light fixed-top py-2">
+        <div class = "container">
+            <a href = "Project_2.html" class = "navbar-brand">
+                <img src = "Images/mlogo.png" height = "50" width = "50">
+                <h3 class = "d-inline align-middle">MicTox</h3>
+            </a>
+            <button class = "navbar-toggler" type = "button" data-toggle = "collapse" data-target = "#coll">
+                <span class = "navbar-toggler-icon"></span>
+            </button>
+            <div class = "collapse navbar-collapse justify-content-end" id = "coll">
+                <ul class = "navbar-nav">
+                    <li class = "nav-item">
+                        <a href = "#showcase" class = "nav-link">Home</a>
+                    </li>
+                    <li class = "nav-item">
+                        <a href = "#about" class = "nav-link">About</a>
+                    </li>
+                    <li class = "nav-item">
+                        <a href = "#authors" class = "nav-link">Meet</a>
+                    </li> 
+                    <li class = "nav-item">
+                        <a href = "#contacts" class = "nav-link">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- SHOWCASE SECTION -->
+    <div class = "py-5" id = "showcase">
+        <div class = "overlay text-white">
+            <div class = "container">
+                <div class = "row">
+                    <div class = "col-lg-6 text-center">
+                        <h1 class = "display-3 mt-5 pt-5">
+                            What Do You Dream Of ?
+                        </h1>
+                        <p class = "lead">
+                                Every human being has a dream which does not happen in the real world 
+                                or which he/she believes to make that actually happen in the near future.
+                        </p> 
+                        <a href = "#" class = "btn btn-outline-secondary btn-lg text-white">
+                            <i class = "fa fa-arrow-right"></i> Read More
+                        </a>
+                    </div>
+                    <div class = "col-lg-6 text-center px-5">
+                        <img src = "Images/book.png" class = "img-fluid d-none d-lg-block pt-3" width = "400"> 
+                    </div>
+                </div>
+            </div>
+        </div> 
+    </div>
+    <!-- NEWSLETTER -->
+    <div id = "newletter" class = "bg-dark text-white py-5">
+        <div class = "container">
+            <div class = "row">
+                <div class = "col-md-4">
+                    <input type = "text" class = "form-control form-control-md" placeholder = "Name">
+                </div>
+                <div class = "col-md-4">
+                    <input type = "text" class = "form-control form-control-md" placeholder = "Email">
+                </div>
+                <div class = "col-md-4">
+                    <button class = "btn btn-primary btn-block" id = "button">
+                        <i class = "fa fa-envelope-open-o"></i> Subscribe
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- BOXES -->
+    <div class = "py-5" id = "boxes">
+        <div class = "container">
+            <div class = "row">
+                <div class = "col-md-3">
+                    <div class = "card border-secondary text-center">
+                        <div class = "card-body">
+                            <h3 style = "color:#3292a6">Be Better</h3>
+                            <p class = "text-muted">Just some random paragraph to fill in some space.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class = "col-md-3">
+                    <div class = "card border-secondary text-center" style = "background-color:#3292a6">
+                        <div class = "card-body">
+                            <h3 class = "text-white">Be Smarter</h3>
+                            <p class = "text-white">Just some random paragraph to fill in some space.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class = "col-md-3">
+                    <div class = "card border-secondary text-center">
+                        <div class = "card-body">
+                            <h3 style = "color:#3292a6">Be Faster</h3>
+                            <p class = "text-muted">Just some random paragraph to fill in some space.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class = "col-md-3">
+                    <div class = "card border-secondary text-center" style = "background-color:#3292a6">
+                        <div class = "card-body">
+                            <h3 class = "text-white">Be Stronger</h3>
+                            <p class = "text-white">Just some random paragraph to fill in some space.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ABOUT -->
+    <div class = "py-5 text-center bg-light" id = "about">
+        <div class = "container">
+            <div class = "row">
+                <div class = "col">
+                    <div class = "info-header mb-5">
+                        <h1 class = "pb-3" style = "color:#3292a6">
+                            Why This Book ?
+                        </h1>
+                        <p class = "lead pb-3">
+                                Books are man’s best friends. Books are portable and so they are easy to
+                                 carry around. And so books can be read at any time night or day, while 
+                                 travelling on a bus or train or flight, and at meal time too. 
+                        </p>
+                    </div>
+                    <!-- ACCORDIAN -->
+                    <div id = "accordion">
+                        <div class = "card">
+                            <div class = "card-header" id = "heading1">
+                                <h5 class = "mb-0">
+                                    <button class="btn btn-link" data-toggle="collapse" data-target="#collapse1" aria-expanded="true" aria-controls="collapse1">
+                                        <i class = "fa fa-arrow-circle-down"></i> Get Inspired
+                                    </button>
+                                </h5>
+                            </div>
+                            <div id = "collapse1" class = "collapse show" aria-labelledby="heading1" data-parent="#accordion">
+                                <div class = "card-body">
+                                    Life is one huge emotional mind game. There are days we wake up 
+                                    with an empty heart wondering if we’re even going to make it. 
+                                    We get beaten to the ground over and over again, we get our hope 
+                                    torn from us, we scream at the top of our lungs to the sky hoping 
+                                    that the moon will fill the void that still remains.. 
+                                    But somehow through all the pain, through all the suffering.. 
+                                    These moments never compare to the seconds that take our breath away.
+                                </div>
+                            </div>
+                        </div>
+                        <div class = "card">
+                            <div class = "card-header" id = "heading2">
+                                <h5 class = "mb-0">
+                                    <button class="btn btn-link" data-toggle="collapse" data-target="#collapse2" aria-expanded="true" aria-controls="collapse2">
+                                        <i class = "fa fa-arrow-circle-down"></i> Gain The Knowledge
+                                    </button>
+                                </h5>
+                            </div>
+                            <div id = "collapse2" class = "collapse" aria-labelledby="heading2" data-parent="#accordion">
+                                <div class = "card-body">
+                                    Knowledge refers to the skills and information acquired through 
+                                    experience and education. From time immemorial, every being is 
+                                    keenly desirous to attain power. However, power should not be 
+                                    misunderstood with the physical strength only.
+                                </div>
+                            </div>
+                        </div>
+                        <div class = "card">
+                            <div class = "card-header" id = "heading3">
+                                <h5 class = "mb-0">
+                                    <button class="btn btn-link" data-toggle="collapse" data-target="#collapse3" aria-expanded="true" aria-controls="collapse3">
+                                        <i class = "fa fa-arrow-circle-down"></i> Open Your Mind
+                                    </button>
+                                </h5>
+                            </div>
+                            <div id = "collapse3" class = "collapse" aria-labelledby="heading3" data-parent="#accordion">
+                                <div class = "card-body">
+                                        The mind is a set of cognitive faculties including consciousness, 
+                                        perception, thinking, judgement, language and memory. It is usually 
+                                        defined as the faculty of an entity's thoughts and consciousness. 
+                                        It holds the power of imagination, recognition, and appreciation, and 
+                                        is responsible for processing feelings and emotions, resulting in 
+                                        attitudes and actions.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- AUTHORS -->
+    <div class = "my-5 text-center" id = "authors">
+        <div class = "container">
+            <div class = "row">
+                <div class = "col">
+                    <div class = "info-header mb-5">
+                        <h1 class = "pb-3" style = "color:#3292a6">
+                            Meet The Authors
+                        </h1>
+                        <p class = "lead pb-3">
+                                Please see below for interviews with authors, contributor pages, 
+                                and also a list of all contributing authors with an example paragraph 
+                                for each.  
+                        </p>
+                    </div>                    
+                </div>
+            </div>
+            <div class = "row">
+                <div class = "col-lg-3 col-md-6">
+                    <div class = "card author-card">
+                        <div class = "card-body">
+                            <img src = "Images/person1.jpg" class = "img-fluid rounded-circle w-50 mb-3 author-img">
+                            <h3>Susan Williams</h3>
+                            <h5 class = "text-muted">
+                                Lead Writer                         
+                            </h5>
+                            <p>
+                                At distant inhabit amongst by. Appetite welcomed interest the 
+                                goodness boy not. Estimable education for disposing pronounce her
+                            </p>
+                            <div class = "d-flex flex-row justify-content-center">
+                                <div class = "p-4">
+                                    <a href = "#"><i class = "fa fa-facebook fa-2x icon"></i></a>
+                                </div>
+                                <div class = "p-4">
+                                    <a href = "#"><i class = "fa fa-twitter fa-2x icon"></i></a>
+                                </div>
+                                <div class = "p-4">
+                                    <a href = "#"><i class = "fa fa-instagram fa-2x icon"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class = "col-lg-3 col-md-6">
+                    <div class = "card author-card">
+                        <div class = "card-body">
+                            <img src = "Images/person2.jpg" class = "img-fluid rounded-circle w-50 mb-3 author-img">
+                            <h3>Grace Smith</h3>
+                            <h5 class = "text-muted">
+                                Co-Writer                         
+                            </h5>
+                            <p>
+                                At distant inhabit amongst by. Appetite welcomed interest the 
+                                goodness boy not. Estimable education for disposing pronounce her
+                            </p>
+                            <div class = "d-flex flex-row justify-content-center">
+                                <div class = "p-4">
+                                    <a href = "#"><i class = "fa fa-facebook fa-2x icon"></i></a>
+                                </div>
+                                <div class = "p-4">
+                                    <a href = "#"><i class = "fa fa-twitter fa-2x icon"></i></a>
+                                </div>
+                                <div class = "p-4">
+                                    <a href = "#"><i class = "fa fa-instagram fa-2x icon"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class = "col-lg-3 col-md-6">
+                    <div class = "card author-card">
+                        <div class = "card-body">
+                            <img src = "Images/person3.jpg" class = "img-fluid rounded-circle w-50 mb-3 author-img">
+                            <h3>John Doe</h3>
+                            <h5 class = "text-muted">
+                                Editor                         
+                            </h5>
+                            <p>
+                                At distant inhabit amongst by. Appetite welcomed interest the 
+                                goodness boy not. Estimable education for disposing pronounce her
+                            </p>
+                            <div class = "d-flex flex-row justify-content-center">
+                                <div class = "p-4">
+                                    <a href = "#"><i class = "fa fa-facebook fa-2x icon"></i></a>
+                                </div>
+                                <div class = "p-4">
+                                    <a href = "#"><i class = "fa fa-twitter fa-2x icon"></i></a>
+                                </div>
+                                <div class = "p-4">
+                                    <a href = "#"><i class = "fa fa-instagram fa-2x icon"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class = "col-lg-3 col-md-6">
+                    <div class = "card author-card">
+                        <div class = "card-body">
+                            <img src = "Images/person4.jpg" class = "img-fluid rounded-circle w-50 mb-3 author-img">
+                            <h3>Erick Peterson</h3>
+                            <h5 class = "text-muted">
+                                Designer                         
+                            </h5>
+                            <p>
+                                At distant inhabit amongst by. Appetite welcomed interest the 
+                                goodness boy not. Estimable education for disposing pronounce her
+                            </p>
+                            <div class = "d-flex flex-row justify-content-center">
+                                <div class = "p-4">
+                                    <a href = "#"><i class = "fa fa-facebook fa-2x icon"></i></a>
+                                </div>
+                                <div class = "p-4">
+                                    <a href = "#"><i class = "fa fa-twitter fa-2x icon"></i></a>
+                                </div>
+                                <div class = "p-4">
+                                    <a href = "#"><i class = "fa fa-instagram fa-2x icon"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- CONTACTS -->
+    <div id = "contacts" class = "bg-light py-5">
+        <div class = "container">
+            <div class = "row">
+                <div class = "col-lg-8">
+                    <h2>Get In Touch</h2>
+                    <p class = "lead">
+                        Feel free to contact us by sharing your valuable information with us and to 
+                        regularly receive updates.
+                    </p>
+                    <form>
+                        <div class = "form-group">
+                            <div class = "input-group-prepend input-group-lg">
+                                <span class = "input-group-text">
+                                    <i class = "fa fa-user fa-2x"></i>
+                                </span>
+                                <input type = "text" class = "form-control" placeholder = "Name">
+                            </div>
+                        </div>
+                        <div class = "form-group">
+                            <div class = "input-group-prepend input-group-lg">
+                                <span class = "input-group-text">
+                                    <i class = "fa fa-envelope fa-2x"></i>
+                                </span>
+                                <input type = "email" class = "form-control" placeholder = "Email">
+                            </div>
+                        </div>
+                        <div class = "form-group">
+                            <div class = "input-group-prepend input-group-lg">
+                                <span class = "input-group-text">
+                                    <i class = "fa fa-pencil fa-2x"></i>
+                                </span>
+                                <textarea class = "form-control" placeholder = "Message" rows = "3"></textarea>
+                            </div>
+                        </div>
+                        <input type = "submit" value = "Submit" class = "btn btn-primary btn-block btn-lg" style = "background-color:#3292a6">
+                    </form>
+                </div>
+                <div class = "col-lg-4 align-self-center">
+                    <img src = "Images/mlogo.png" class = "img-fluid">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- FOOTER -->
+    <div id = "footer" style = "background-color:#3292a6" class = "py-3 text-white">
+        <div class = "container">
+            <div class = "row">
+                <div class = "col text-center">
+                    <p class = "lead">
+                        Copyright <i class = "fa fa-copyright"></i> 2018 
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<script src="jquery.js"></script>
+<script src="tether.js"></script>
+<script src="bs.js"></script>
+
+<script src="navbar-fixed.js"></script>
+</body>
+</html>
