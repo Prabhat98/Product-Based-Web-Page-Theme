@@ -1,4 +1,4 @@
-# Product-Based-Webpage-Project_1-
+# Product-Based-Webpage-Project_2-
 This is a Web Page based on a Product like Book Theme .
 ## Getting Started 
 Just Clone the entire repository to your local machine and run the "Project_2.html" file into your browser.
